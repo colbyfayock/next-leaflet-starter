@@ -1,4 +1,4 @@
-# Next.js Leaflet Starter
+# 🍃 Next.js Leaflet Starter
 
 ## Getting Started
 
