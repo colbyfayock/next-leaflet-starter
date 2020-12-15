@@ -40,15 +40,29 @@ export default function Home() {
           )}
         </Map>
 
+        <p className={styles.description}>
+          <code className={styles.code}>yarn create next-app -e https://github.com/colbyfayock/next-leaflet-starter</code>
+        </p>
+
         <div className={styles.grid}>
+          <a href="https://github.com/colbyfayock/next-leaflet-starter" className={styles.card}>
+            <h3>GitHub &rarr;</h3>
+            <p>See the code in action.</p>
+          </a>
+
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h3>Next.js &rarr;</h3>
+            <p>Getting started with Next.js</p>
           </a>
 
           <a href="https://leafletjs.com/" className={styles.card}>
             <h3>Leaflet &rarr;</h3>
-            <p>Learn about React Leaflet with examples and documentation!</p>
+            <p>Mapping features and APIs.</p>
+          </a>
+
+          <a href="https://react-leaflet.js.org/" className={styles.card}>
+            <h3>React Leaflet &rarr;</h3>
+            <p>Native Leaflet components in React</p>
           </a>
         </div>
       </main>
