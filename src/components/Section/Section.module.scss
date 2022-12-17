@@ -1,0 +1,9 @@
+.section {
+  padding: 1em 0;
+  margin: 1em 0;
+
+  @media (min-width: 720px) {
+    padding: 2em 0;
+    margin: 3em 0;
+  }
+}

@@ -1,39 +1,21 @@
-import { useEffect } from 'react';
-import L from 'leaflet';
-import * as ReactLeaflet from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import dynamic from 'next/dynamic';
 
-import styles from './Map.module.css';
+const DynamicMap = dynamic(() => import('./DynamicMap'), {
+  ssr: false
+});
 
-import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
-import iconUrl from 'leaflet/dist/images/marker-icon.png';
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+// Set default sizing to control aspect ratio which will scale responsively
+// but also help avoid layout shift
 
-const { MapContainer } = ReactLeaflet;
+const DEFAULT_WIDTH = 600;
+const DEFAULT_HEIGHT = 600;
 
-const Map = ({ children, className, ...rest }) => {
-  let mapClassName = styles.map;
-
-  if ( className ) {
-    mapClassName = `${mapClassName} ${className}`;
-  }
-
-  useEffect(() => {
-    (async function init() {
-      delete L.Icon.Default.prototype._getIconUrl;
-
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: iconRetinaUrl.src,
-        iconUrl: iconUrl.src,
-        shadowUrl: shadowUrl.src,
-      });
-    })();
-  }, []);
-
+const Map = (props) => {
+  const { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT } = props;
   return (
-    <MapContainer className={mapClassName} {...rest}>
-      {children(ReactLeaflet)}
-    </MapContainer>
+    <div style={{ aspectRatio: width / height }}>
+      <DynamicMap {...props} />
+    </div>
   )
 }
 
