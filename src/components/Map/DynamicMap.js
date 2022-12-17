@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import L from 'leaflet';
+import Leaflet from 'leaflet';
 import * as ReactLeaflet from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -16,8 +16,8 @@ const Map = ({ children, className, width, height, ...rest }) => {
 
   useEffect(() => {
     (async function init() {
-      delete L.Icon.Default.prototype._getIconUrl;
-      L.Icon.Default.mergeOptions({
+      delete Leaflet.Icon.Default.prototype._getIconUrl;
+      Leaflet.Icon.Default.mergeOptions({
         iconRetinaUrl: 'leaflet/images/marker-icon-2x.png',
         iconUrl: 'leaflet/images/marker-icon.png',
         shadowUrl: 'leaflet/images/marker-shadow.png',
@@ -27,7 +27,7 @@ const Map = ({ children, className, width, height, ...rest }) => {
 
   return (
     <MapContainer className={mapClassName} {...rest}>
-      {children(ReactLeaflet)}
+      {children(ReactLeaflet, Leaflet)}
     </MapContainer>
   )
 }
