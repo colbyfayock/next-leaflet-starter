@@ -19,7 +19,9 @@ Jumpstart your new Next.js mapping project with Leaflet!
 
 ### Quick Start
 ```
-yarn create next-app -e https://github.com/colbyfayock/next-leaflet-starter my-leaflet-app
+yarn create next-app -e https://github.com/colbyfayock/next-leaflet-starter
+# or
+npm run create-next-app -e https://github.com/colbyfayock/next-leaflet-starter
 ```
 
 ### Running the Project
