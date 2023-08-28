@@ -42,7 +42,7 @@ export default function Home() {
           </Map>
 
           <p className={styles.description}>
-            <code className={styles.code}>yarn create next-app -e https://github.com/colbyfayock/next-leaflet-starter</code>
+            <code className={styles.code}>npx create-next-app -e https://github.com/colbyfayock/next-leaflet-starter</code>
           </p>
 
           <p className={styles.view}>
