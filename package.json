@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
+    "export": "next export",
     "start": "next start"
   },
   "repository": {
@@ -20,11 +20,11 @@
   "dependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "leaflet": "^1.9.4",
-    "next": "^13.4.19",
+    "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.11.0",
     "react-leaflet": "^4.2.1",
-    "sass": "^1.66.1"
+    "sass": "^1.69.5"
   }
 }
